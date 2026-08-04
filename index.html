@@ -1,4 +1,4 @@
-<title>Oak & Fawn Corporation</title>
+<title>Oak & Fawn | General Contracting, New Construction & Custom Carpentry</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   /* ---------- Tokens ---------- */
@@ -119,10 +119,8 @@
   /* ---------- Page-section framing ---------- */
   .page-section{ border-top:1px solid var(--line); padding-block:clamp(3.5rem,7vw,6rem); }
   .page-section:first-of-type{ border-top:none; }
-  .page-kicker{ display:flex; align-items:baseline; gap:0.75rem; margin-bottom:clamp(2rem,4vw,3.2rem); }
-  .page-kicker .num{ font-family:var(--serif); font-style:italic; color:var(--ink-soft); font-size:0.95rem; }
-  .page-kicker .rule{ flex:1; height:1px; background:var(--line); }
-  .page-kicker .label{ font-size:0.72rem; text-transform:uppercase; letter-spacing:0.16em; font-weight:700; color:var(--sage-deep); }
+  .section-head{ max-width:44rem; margin-bottom:clamp(2rem,4vw,3rem); }
+  .section-head h2{ margin-top:0.6rem; }
 
   .reveal{ opacity:0; transform:translateY(16px); transition:opacity 0.7s ease, transform 0.7s ease; }
   .reveal.in-view{ opacity:1; transform:none; }
@@ -138,28 +136,10 @@
   .hero-copy h1{ margin-bottom:1.1rem; }
   .hero-copy p.lede{ margin-bottom:1.8rem; }
 
-  /* ---------- Pathways ---------- */
-  .pathways{ display:grid; grid-template-columns:1fr; gap:1.5rem; margin-top:clamp(3rem,6vw,5rem); }
-  @media (min-width:820px){ .pathways{ grid-template-columns:1fr 1fr; } }
-  .pathway{
-    position:relative; border-radius:6px; padding:clamp(1.75rem,3vw,2.5rem);
-    display:flex; flex-direction:column; gap:1.1rem; min-height:320px; justify-content:flex-end;
-    text-decoration:none; color:var(--ink); border:1px solid var(--line);
-    transition:transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .pathway:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
-  .pathway.homes{ background:linear-gradient(155deg, color-mix(in srgb, var(--sage) 20%, var(--surface)), var(--surface)); }
-  .pathway.carpentry{ background:linear-gradient(155deg, color-mix(in srgb, var(--tan) 55%, var(--surface)), var(--surface)); }
-  .pathway .swatch{ position:absolute; top:1.25rem; right:1.25rem; width:74px; height:74px; opacity:0.5; }
-  .pathway h3{ font-size:clamp(1.4rem,2vw,1.8rem); }
-  .pathway .arrow-link{ font-size:0.85rem; font-weight:700; display:inline-flex; align-items:center; gap:0.4rem; }
-  .pathway .arrow-link svg{ width:14px; height:14px; transition:transform 0.2s; }
-  .pathway:hover .arrow-link svg{ transform:translateX(4px); }
-
-  /* ---------- Story ---------- */
-  .story{ margin-top:clamp(4rem,7vw,6rem); display:grid; grid-template-columns:1fr; gap:2.5rem; align-items:center; }
-  @media (min-width:800px){ .story{ grid-template-columns:0.85fr 1fr; } }
-  .story-figure{ aspect-ratio:4/5; border-radius:6px; overflow:hidden; }
+  /* ---------- About split ---------- */
+  .about-split{ display:grid; grid-template-columns:1fr; gap:2.5rem; align-items:center; }
+  @media (min-width:800px){ .about-split{ grid-template-columns:0.85fr 1fr; } }
+  .about-figure{ aspect-ratio:4/5; border-radius:6px; overflow:hidden; }
 
   /* ---------- Swatch (photo placeholder) ---------- */
   figure.swatch-block{ margin:0; }
@@ -168,15 +148,15 @@
   }
   .swatch{ width:100%; height:100%; border-radius:6px; display:block; }
 
-  /* ---------- Learn teaser ---------- */
-  .learn-teaser{
-    margin-top:clamp(4rem,7vw,6rem); border-radius:8px; padding:clamp(2rem,4vw,3rem);
-    background:var(--bg-alt); display:grid; gap:1.5rem; grid-template-columns:1fr;
+  /* ---------- Notice banner (reused for portfolio teaser) ---------- */
+  .notice-banner{
+    border:1px dashed var(--sage-deep); border-radius:6px;
+    padding:clamp(1.5rem,3vw,2.25rem); display:flex; gap:1.25rem; align-items:flex-start;
+    background:color-mix(in srgb, var(--sage) 10%, var(--surface));
   }
-  @media (min-width:760px){ .learn-teaser{ grid-template-columns:auto 1fr auto; align-items:center; } }
-  .learn-teaser .icon-ring{ width:52px; height:52px; color:var(--sage-deep); }
+  .notice-banner svg{ width:30px; height:30px; flex-shrink:0; color:var(--sage-deep); margin-top:0.2rem; }
 
-  /* ---------- Cards (services / capabilities) ---------- */
+  /* ---------- Cards (service offerings) ---------- */
   .card-grid{ display:grid; grid-template-columns:1fr; gap:1.25rem; }
   @media (min-width:700px){ .card-grid{ grid-template-columns:1fr 1fr; } }
   .card{
@@ -189,9 +169,20 @@
   .card h3{ font-size:1.15rem; }
   .card p{ font-size:0.95rem; }
 
+  /* ---------- Service divisions ---------- */
+  .division{ margin-top:clamp(2.5rem,4vw,3.5rem); }
+  .division:nth-of-type(2){
+    margin-top:clamp(3rem,5vw,4.5rem); padding-top:clamp(3rem,5vw,4.5rem); border-top:1px solid var(--line);
+  }
+  .division-head{ max-width:52rem; }
+  .division-head h3{ font-size:clamp(1.5rem,2.2vw + 1rem,2rem); }
+  .division-head p{ margin-top:0.6rem; }
+  .division .card-grid{ margin-top:2rem; }
+
   /* ---------- Process (real sequence -> numbered) ---------- */
   .process{ position:relative; display:grid; grid-template-columns:1fr; gap:2.25rem; margin-top:1rem; }
   @media (min-width:820px){ .process{ grid-template-columns:repeat(4,1fr); } }
+  @media (min-width:820px){ .process.process-3{ grid-template-columns:repeat(3,1fr); } }
   .process::before{
     content:""; position:absolute; left:0; right:0; top:26px; height:1px; background:var(--line);
     display:none;
@@ -206,45 +197,6 @@
   .step h3{ font-size:1.05rem; }
   .step p{ font-size:0.92rem; }
 
-  /* ---------- CTA band ---------- */
-  .cta-band{
-    margin-top:clamp(3.5rem,6vw,5rem); border-radius:8px; padding:clamp(2.25rem,4vw,3.5rem);
-    background:var(--walnut-deep); color:#F6EEE1; position:relative; overflow:hidden;
-    display:flex; flex-wrap:wrap; gap:1.75rem; justify-content:space-between; align-items:center;
-  }
-  .cta-band::after{
-    content:""; position:absolute; inset:0; opacity:0.08; mix-blend-mode:overlay;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  .cta-band h2{ color:#F6EEE1; max-width:24ch; position:relative; z-index:1; }
-  .cta-band p{ color:#E7D9C5; max-width:36ch; position:relative; z-index:1; }
-  .cta-band .btn-primary{ background:#F6EEE1; color:var(--walnut-deep); position:relative; z-index:1; }
-
-  /* ---------- Material split (Carpentry) ---------- */
-  .material-split{ display:grid; grid-template-columns:1fr; gap:2.5rem; align-items:center; margin-top:1rem; }
-  @media (min-width:800px){ .material-split{ grid-template-columns:1fr 0.9fr; } }
-  .material-split .swatch-block{ aspect-ratio:5/4; }
-  .material-split ul{ margin:1.1rem 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:0.6rem; }
-  .material-split li{ padding-left:1.4rem; position:relative; font-size:0.95rem; color:var(--ink-soft); }
-  .material-split li::before{ content:"—"; position:absolute; left:0; color:var(--sage-deep); }
-
-  /* ---------- Learn page ---------- */
-  .learn-banner{
-    margin-top:2.5rem; border:1px dashed var(--sage-deep); border-radius:6px;
-    padding:clamp(1.5rem,3vw,2.25rem); display:flex; gap:1.25rem; align-items:flex-start;
-    background:color-mix(in srgb, var(--sage) 10%, var(--surface));
-  }
-  .learn-banner svg{ width:30px; height:30px; flex-shrink:0; color:var(--sage-deep); margin-top:0.2rem; }
-  .topics-grid{ margin-top:2.5rem; display:grid; grid-template-columns:1fr; gap:1.25rem; }
-  @media (min-width:700px){ .topics-grid{ grid-template-columns:repeat(2,1fr); } }
-  .topic-card{ background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:1.5rem; position:relative; }
-  .soon-tag{
-    position:absolute; top:1.25rem; right:1.25rem; font-size:0.65rem; font-weight:700; text-transform:uppercase;
-    letter-spacing:0.1em; color:var(--sage-deep); border:1px solid var(--sage-deep); border-radius:20px; padding:0.2rem 0.6rem;
-  }
-  .topic-card h3{ margin-right:5.5rem; font-size:1.08rem; }
-  .topic-card p{ margin-top:0.6rem; font-size:0.92rem; }
-
   /* ---------- Contact ---------- */
   .contact-grid{ display:grid; grid-template-columns:1fr; gap:3rem; }
   @media (min-width:860px){ .contact-grid{ grid-template-columns:1fr 1fr; } }
@@ -256,6 +208,7 @@
     border-bottom:1px solid transparent; transition:border-color 0.2s;
   }
   .contact-list a:hover{ border-color:var(--walnut); }
+  .contact-region{ font-family:var(--serif); font-style:italic; font-size:1.05rem; color:var(--ink-soft); }
   .fineprint{ font-size:0.85rem; color:var(--ink-soft); margin-top:0.5rem; }
 
   /* ---------- Footer ---------- */
@@ -277,7 +230,6 @@
 
     <symbol id="i-addition" viewBox="0 0 48 48"><path d="M6 40V22L17 13l11 9v18Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M27 40V27l8-6 8 6v13Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
     <symbol id="i-remodel" viewBox="0 0 48 48"><rect x="9" y="12" width="20" height="20" rx="2" transform="rotate(-8 19 22)" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="18" y="17" width="20" height="20" rx="2" transform="rotate(8 28 27)" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
-    <symbol id="i-structural" viewBox="0 0 48 48"><path d="M14 8H34M14 40H34M24 8V40" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18 8H30M18 40H30" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
     <symbol id="i-custom" viewBox="0 0 48 48"><circle cx="24" cy="24" r="15" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M24 24 24 11M24 24 33 31" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="24" cy="24" r="1.8" fill="currentColor"/></symbol>
 
     <symbol id="i-kitchen" viewBox="0 0 48 48"><rect x="10" y="12" width="28" height="24" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="20" y="17" width="8" height="2.2" rx="1" fill="currentColor"/><path d="M10 24H38" stroke="currentColor" stroke-width="1.2" opacity="0.5"/></symbol>
@@ -288,10 +240,8 @@
     <symbol id="i-consult" viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="20" rx="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 30 12 38 22 30Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
     <symbol id="i-plan" viewBox="0 0 48 48"><path d="M8 38 34 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M34 12 41 8 40 15Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 38 12 39 9 35Z" fill="currentColor"/></symbol>
     <symbol id="i-build" viewBox="0 0 48 48"><path d="M10 32a14 14 0 0 1 28 0" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 32H42" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
-    <symbol id="i-handover" viewBox="0 0 48 48"><circle cx="16" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M23 24H40" stroke="currentColor" stroke-width="1.6"/><path d="M34 24V29M40 24V28" stroke="currentColor" stroke-width="1.6"/></symbol>
 
-    <symbol id="i-book" viewBox="0 0 48 48"><path d="M8 12c6-3 12-3 16 0v26c-4-3-10-3-16 0Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M40 12c-6-3-12-3-16 0v26c4-3 10-3 16 0Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12H19M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 48 48"><rect x="6" y="14" width="36" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 14l3-5h10l3 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="24" cy="26" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
 
     <symbol id="i-leaf" viewBox="0 0 200 200"><path d="M100 10 C150 40 175 90 150 140 C130 175 90 190 60 175 C20 155 15 100 45 65 C65 40 85 20 100 10Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M100 15 C95 70 90 130 70 175" fill="none" stroke="currentColor" stroke-width="1.2"/></symbol>
 
@@ -300,11 +250,6 @@
       <rect width="40" height="40" fill="color-mix(in srgb, var(--sage) 24%, var(--surface))"/>
       <path d="M-10 10 C0 4 10 16 20 10 S40 4 50 10" fill="none" stroke="var(--sage-deep)" stroke-opacity="0.35" stroke-width="1"/>
       <path d="M-10 25 C0 19 10 31 20 25 S40 19 50 25" fill="none" stroke="var(--sage-deep)" stroke-opacity="0.25" stroke-width="1"/>
-    </pattern>
-    <pattern id="grain-tan" width="40" height="40" patternUnits="userSpaceOnUse">
-      <rect width="40" height="40" fill="color-mix(in srgb, var(--tan) 55%, var(--surface))"/>
-      <path d="M-10 12 C2 6 12 18 24 12 S44 6 54 12" fill="none" stroke="var(--walnut)" stroke-opacity="0.3" stroke-width="1"/>
-      <path d="M-10 28 C2 22 12 34 24 28 S44 22 54 28" fill="none" stroke="var(--walnut)" stroke-opacity="0.2" stroke-width="1"/>
     </pattern>
     <pattern id="grain-walnut" width="40" height="40" patternUnits="userSpaceOnUse">
       <rect width="40" height="40" fill="color-mix(in srgb, var(--walnut) 22%, var(--surface))"/>
@@ -325,272 +270,170 @@
     </a>
     <nav class="mainnav">
       <div class="navlinks" style="display:flex; gap:inherit;">
-        <a href="#home" data-nav="home">Home</a>
-        <a href="#homes" data-nav="homes">Homes</a>
-        <a href="#carpentry" data-nav="carpentry">Carpentry</a>
-        <a href="#learn" data-nav="learn">Learn</a>
+        <a href="#about" data-nav="about">About</a>
+        <a href="#services" data-nav="services">Services</a>
+        <a href="#how-we-work" data-nav="how-we-work">How We Work</a>
         <a href="#contact" data-nav="contact">Contact</a>
       </div>
-      <a class="btn btn-primary nav-cta" href="#contact">Start a Conversation</a>
+      <a class="btn btn-primary nav-cta" href="#contact">Discuss Your Project</a>
     </nav>
   </div>
 </header>
 
 <main>
 
-  <!-- ================= HOME ================= -->
+  <!-- ================= HERO ================= -->
   <section id="home" class="page-section" style="padding-top:0; border-top:none;">
     <div class="wrap hero">
       <svg class="hero-grain" viewBox="0 0 200 200"><rect width="200" height="200" filter="url(#grain-noise)"/></svg>
       <svg class="hero-leaf" viewBox="0 0 200 200"><use href="#i-leaf"/></svg>
       <div class="hero-inner">
         <div class="hero-copy reveal">
-          <span class="eyebrow">Oak &amp; Fawn Corporation</span>
-          <h1>Built by hand.<br>Built to last.</h1>
-          <p class="lede">Oak &amp; Fawn brings together whole-home construction and fine custom carpentry — one team, one standard of craft, from the frame of your house to the pull of your cabinet drawer.</p>
+          <span class="eyebrow">Serving Northern Illinois</span>
+          <h1>General Contracting, New Construction &amp; Custom Carpentry</h1>
+          <p class="lede">Building custom homes, additions, and handcrafted architectural millwork across Northern Illinois.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#homes">Explore Our Work</a>
-            <a class="btn btn-ghost" href="#contact">Start a Conversation</a>
+            <a class="btn btn-primary" href="#contact">Discuss Your Project</a>
+            <a class="btn btn-ghost" href="#services">Our Services</a>
           </div>
         </div>
-      </div>
-
-      <!-- Dual Pathway -->
-      <div class="pathways reveal">
-        <a class="pathway homes" href="#homes">
-          <svg class="swatch" viewBox="0 0 74 74"><rect width="74" height="74" rx="6" fill="url(#grain-sage)"/></svg>
-          <div>
-            <span class="eyebrow">Building &amp; Additions</span>
-            <h3>Oak &amp; Fawn Homes</h3>
-          </div>
-          <p style="font-size:0.95rem;">Full remodels, additions, and custom homes — managed from first sketch to final walkthrough.</p>
-          <span class="arrow-link">See How We Build <svg viewBox="0 0 24 24" width="14" height="14"><use href="#i-arrow"/></svg></span>
-        </a>
-        <a class="pathway carpentry" href="#carpentry">
-          <svg class="swatch" viewBox="0 0 74 74"><rect width="74" height="74" rx="6" fill="url(#grain-walnut)"/></svg>
-          <div>
-            <span class="eyebrow">Custom Carpentry</span>
-            <h3>Oak &amp; Fawn Carpentry</h3>
-          </div>
-          <p style="font-size:0.95rem;">Cabinetry, built-ins, and millwork made in our shop, fitted to your home like it was always meant to be there.</p>
-          <span class="arrow-link">See Our Craft <svg viewBox="0 0 24 24" width="14" height="14"><use href="#i-arrow"/></svg></span>
-        </a>
-      </div>
-
-      <!-- Story -->
-      <div class="story reveal">
-        <figure class="swatch-block story-figure" style="margin:0;">
-          <svg class="swatch" viewBox="0 0 100 125" preserveAspectRatio="none" style="width:100%;height:100%;"><rect width="100" height="125" fill="url(#grain-walnut)"/></svg>
-        </figure>
-        <div>
-          <span class="eyebrow">Our Philosophy</span>
-          <h2 style="margin-top:0.6rem;">Two crafts. One standard.</h2>
-          <p class="lede" style="margin-top:1rem;">Oak &amp; Fawn started from a simple frustration: it's hard to find people who build like they mean it. Contractors who show up when they say they will. Carpenters who care about a reveal line nobody else will notice. So we built a company around that kind of care — one side raising additions and remodeling homes, the other shaping wood into cabinetry and built-ins — both held to the same quiet standard: do it right, explain it clearly, and never rush the parts that matter.</p>
-        </div>
-      </div>
-
-      <!-- Learn teaser -->
-      <div class="learn-teaser reveal">
-        <svg class="icon-ring" viewBox="0 0 48 48"><use href="#i-book"/></svg>
-        <div>
-          <h3>Thinking it through before you build</h3>
-          <p style="margin-top:0.4rem; font-size:0.95rem;">We believe the best clients are informed ones. Our Learn hub is where we're building out honest, practical guides on wood species, remodel timelines, permitting, and how to actually prepare for a project like this.</p>
-        </div>
-        <a class="btn btn-ghost" href="#learn">Visit the Learn Hub</a>
       </div>
     </div>
   </section>
 
-  <!-- ================= HOMES ================= -->
-  <section id="homes" class="page-section" style="background:var(--bg-alt);">
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="page-section" style="background:var(--bg-alt);">
+    <div class="wrap about-split reveal">
+      <figure class="swatch-block about-figure" style="margin:0;">
+        <svg class="swatch" viewBox="0 0 100 125" preserveAspectRatio="none" style="width:100%;height:100%;"><rect width="100" height="125" fill="url(#grain-walnut)"/></svg>
+        <figcaption>Precision framing on a recent addition.</figcaption>
+      </figure>
+      <div>
+        <span class="eyebrow">About Oak &amp; Fawn</span>
+        <h2 style="margin-top:0.6rem;">Built on Precision &amp; Proven Project Management</h2>
+        <p class="lede" style="margin-top:1rem;">At Oak &amp; Fawn, we combine the oversight of a full-service general contractor with the meticulous detail of a custom woodshop. Whether managing a ground-up new build, an extensive home addition, or crafting bespoke built-ins, we deliver clean execution, transparent management, and exceptional build quality across Northern Illinois.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section id="services" class="page-section">
     <div class="wrap">
-      <div class="page-kicker"><span class="label">Oak &amp; Fawn Homes</span><span class="rule"></span><span class="num">Page 02</span></div>
+      <div class="section-head reveal">
+        <span class="eyebrow">What We Do</span>
+        <h2>Our Services</h2>
+      </div>
 
-      <div class="hero-copy reveal">
-        <span class="eyebrow">General Contracting</span>
-        <h1 style="font-size:clamp(2.1rem,3.4vw + 1rem,3.4rem); margin-top:0.7rem;">A home built around how you actually live.</h1>
-        <p class="lede" style="margin-top:1.1rem;">We manage every stage of your remodel, addition, or new build — so you get one point of contact, one clear plan, and a finished home that feels like it was always yours.</p>
-        <div class="cta-row" style="margin-top:1.6rem;">
-          <a class="btn btn-primary" href="#contact">Tell Us About Your Project</a>
+      <div class="division reveal" id="services-homes">
+        <div class="division-head">
+          <span class="eyebrow">Division 1</span>
+          <h3 style="margin-top:0.5rem;">Homes — General Contracting &amp; New Builds</h3>
+          <p>Complete project management and construction services for homeowners looking to build, expand, or fully renovate.</p>
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <svg class="icon" viewBox="0 0 48 48"><use href="#i-custom"/></svg>
+            <h3>New Home Construction &amp; Spec Builds</h3>
+            <p>Ground-up builds, whether fully custom to your plans or a spec home built to our standard of craft.</p>
+          </div>
+          <div class="card">
+            <svg class="icon" viewBox="0 0 48 48"><use href="#i-addition"/></svg>
+            <h3>Large-Scale Home Additions &amp; Structural Extensions</h3>
+            <p>More square footage, seamlessly matched to your home's existing structure and character.</p>
+          </div>
+          <div class="card">
+            <svg class="icon" viewBox="0 0 48 48"><use href="#i-remodel"/></svg>
+            <h3>Whole-House Remodels &amp; Basement Transformations</h3>
+            <p>Reworking layout, systems, and finishes for a home that fits your life now.</p>
+          </div>
+          <div class="card">
+            <svg class="icon" viewBox="0 0 48 48"><use href="#i-plan"/></svg>
+            <h3>End-to-End Subcontractor Oversight, Permitting &amp; Scheduling</h3>
+            <p>One point of contact managing every trade, permit, and deadline from start to finish.</p>
+          </div>
         </div>
       </div>
 
-      <div class="card-grid reveal" style="margin-top:3.5rem;">
-        <div class="card">
-          <svg class="icon" viewBox="0 0 48 48"><use href="#i-addition"/></svg>
-          <h3>Home Additions</h3>
-          <p>More square footage, seamlessly matched to your home's existing structure and character.</p>
+      <div class="division reveal" id="services-carpentry">
+        <div class="division-head">
+          <span class="eyebrow">Division 2</span>
+          <h3 style="margin-top:0.5rem;">Custom Carpentry &amp; Architectural Millwork</h3>
+          <p>Handcrafted, high-end woodwork tailored to your home's exact layout and architectural style.</p>
         </div>
-        <div class="card">
-          <svg class="icon" viewBox="0 0 48 48"><use href="#i-remodel"/></svg>
-          <h3>Whole-Home Remodels</h3>
-          <p>Reworking layout, systems, and finishes for a home that fits your life now.</p>
-        </div>
-        <div class="card">
-          <svg class="icon" viewBox="0 0 48 48"><use href="#i-structural"/></svg>
-          <h3>Structural Renovations</h3>
-          <p>Foundation, framing, and load-bearing work handled with the right permits and the right crew.</p>
-        </div>
-        <div class="card">
-          <svg class="icon" viewBox="0 0 48 48"><use href="#i-custom"/></svg>
-          <h3>Custom &amp; Spec Homes</h3>
-          <p>Ground-up builds, whether fully custom to your plans or a spec home built to our standard of craft.</p>
+        <div class="card-grid">
+          <div class="card">
+            <svg class="icon" viewBox="0 0 48 48" style="color:var(--sage-deep)"><use href="#i-kitchen"/></svg>
+            <h3>Bespoke Kitchen Cabinetry &amp; Bathroom Vanities</h3>
+            <p>Full kitchens and vanities designed around how you actually cook and store.</p>
+          </div>
+          <div class="card">
+            <svg class="icon" viewBox="0 0 48 48" style="color:var(--sage-deep)"><use href="#i-builtin"/></svg>
+            <h3>Custom Built-Ins, Mudrooms &amp; Storage Systems</h3>
+            <p>Window seats, mudroom lockers, and closets shaped to fit your space exactly.</p>
+          </div>
+          <div class="card">
+            <svg class="icon" viewBox="0 0 48 48" style="color:var(--sage-deep)"><use href="#i-trim"/></svg>
+            <h3>Architectural Finish Carpentry, Trim &amp; Interior Detailing</h3>
+            <p>Baseboards, casings, and paneling that tie a room together.</p>
+          </div>
+          <div class="card">
+            <svg class="icon" viewBox="0 0 48 48" style="color:var(--sage-deep)"><use href="#i-door"/></svg>
+            <h3>Custom Wood Doors &amp; Architectural Features</h3>
+            <p>Pantry doors, barn doors, and specialty entries built as functional art.</p>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="reveal" style="margin-top:4rem;">
+  <!-- ================= HOW WE WORK ================= -->
+  <section id="how-we-work" class="page-section" style="background:var(--bg-alt);">
+    <div class="wrap">
+      <div class="section-head reveal">
         <span class="eyebrow">Our Process</span>
-        <div class="process">
-          <div class="step">
-            <div class="step-num"><svg width="22" height="22" viewBox="0 0 48 48" style="color:var(--walnut)"><use href="#i-consult"/></svg></div>
-            <h3>1. Consultation</h3>
-            <p>We walk the space, listen to what you actually need, and talk honestly about scope and budget.</p>
-          </div>
-          <div class="step">
-            <div class="step-num"><svg width="22" height="22" viewBox="0 0 48 48" style="color:var(--walnut)"><use href="#i-plan"/></svg></div>
-            <h3>2. Design &amp; Planning</h3>
-            <p>Drawings, material selections, and a clear timeline — no surprises buried in fine print.</p>
-          </div>
-          <div class="step">
-            <div class="step-num"><svg width="22" height="22" viewBox="0 0 48 48" style="color:var(--walnut)"><use href="#i-build"/></svg></div>
-            <h3>3. Build</h3>
-            <p>Our crews execute the plan with regular updates, so you always know where things stand.</p>
-          </div>
-          <div class="step">
-            <div class="step-num"><svg width="22" height="22" viewBox="0 0 48 48" style="color:var(--walnut)"><use href="#i-handover"/></svg></div>
-            <h3>4. Handover</h3>
-            <p>A final walkthrough, a clean site, and a home ready to live in.</p>
-          </div>
-        </div>
+        <h2>How We Work</h2>
       </div>
-
-      <div class="cta-band reveal">
-        <div>
-          <h2>Have a project in mind?</h2>
-          <p style="margin-top:0.6rem;">Whether it's a single room or a full addition, we're happy to talk it through — no pressure, no pitch, just a conversation about what's possible.</p>
+      <div class="process process-3 reveal">
+        <div class="step">
+          <div class="step-num"><svg width="22" height="22" viewBox="0 0 48 48" style="color:var(--walnut)"><use href="#i-consult"/></svg></div>
+          <h3>1. Project Consultation &amp; Scope Development</h3>
+          <p>We meet on-site, understand your goals, and define a clear, honest scope before anything is designed.</p>
         </div>
-        <a class="btn btn-primary" href="#contact">Start a Conversation</a>
+        <div class="step">
+          <div class="step-num"><svg width="22" height="22" viewBox="0 0 48 48" style="color:var(--walnut)"><use href="#i-plan"/></svg></div>
+          <h3>2. Detailed Planning, Permitting &amp; Fabrication</h3>
+          <p>Drawings, permitting, and material selection move in parallel, so fabrication can start the moment we break ground.</p>
+        </div>
+        <div class="step">
+          <div class="step-num"><svg width="22" height="22" viewBox="0 0 48 48" style="color:var(--walnut)"><use href="#i-build"/></svg></div>
+          <h3>3. On-Site Execution, Trade Oversight &amp; Final Quality Walkthrough</h3>
+          <p>Our team manages every trade on-site, keeping the schedule tight and finishing with a full walkthrough before handover.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= CARPENTRY ================= -->
-  <section id="carpentry" class="page-section">
+  <!-- ================= PORTFOLIO TEASER ================= -->
+  <section id="portfolio" class="page-section" style="padding-block:clamp(2.5rem,4vw,3.5rem);">
     <div class="wrap">
-      <div class="page-kicker"><span class="label">Oak &amp; Fawn Carpentry</span><span class="rule"></span><span class="num">Page 03</span></div>
-
-      <div class="hero-copy reveal">
-        <span class="eyebrow">Custom Cabinetry &amp; Millwork</span>
-        <h1 style="font-size:clamp(2.1rem,3.4vw + 1rem,3.4rem); margin-top:0.7rem;">Cabinetry that's built, not installed.</h1>
-        <p class="lede" style="margin-top:1.1rem;">Every piece we make starts in our shop — hand-selected wood, precise joinery, and finishes made to hold up to real life, fitted to your home down to the last reveal line.</p>
-        <div class="cta-row" style="margin-top:1.6rem;">
-          <a class="btn btn-primary" href="#contact">Collaborate With Us</a>
-        </div>
-      </div>
-
-      <div class="card-grid reveal" style="margin-top:3.5rem;">
-        <div class="card">
-          <svg class="icon" viewBox="0 0 48 48" style="color:var(--sage-deep)"><use href="#i-kitchen"/></svg>
-          <h3>Kitchen &amp; Pantry Cabinetry</h3>
-          <p>Full kitchens, butler's pantries, and everything in between, designed around how you cook and store.</p>
-        </div>
-        <div class="card">
-          <svg class="icon" viewBox="0 0 48 48" style="color:var(--sage-deep)"><use href="#i-builtin"/></svg>
-          <h3>Integrated Storage &amp; Built-Ins</h3>
-          <p>Window seats, mudroom lockers, bookshelves, and closets shaped to fit your space exactly.</p>
-        </div>
-        <div class="card">
-          <svg class="icon" viewBox="0 0 48 48" style="color:var(--sage-deep)"><use href="#i-door"/></svg>
-          <h3>Architectural Doors</h3>
-          <p>Pantry doors, barn doors, and specialty entries built as functional art.</p>
-        </div>
-        <div class="card">
-          <svg class="icon" viewBox="0 0 48 48" style="color:var(--sage-deep)"><use href="#i-trim"/></svg>
-          <h3>Custom Trim &amp; Millwork</h3>
-          <p>Baseboards, casings, and paneling that tie a room together.</p>
-        </div>
-      </div>
-
-      <div class="material-split reveal">
-        <figure class="swatch-block">
-          <svg class="swatch" viewBox="0 0 100 80" preserveAspectRatio="none" style="width:100%;height:100%;"><rect width="100" height="80" fill="url(#grain-walnut)"/></svg>
-        </figure>
+      <div class="notice-banner reveal">
+        <svg viewBox="0 0 48 48"><use href="#i-camera"/></svg>
         <div>
-          <span class="eyebrow">Material &amp; Craft</span>
-          <h2 style="margin-top:0.6rem;">A note on how we build</h2>
-          <p style="margin-top:1rem;">We hand-select hardwoods for grain and character, not just cost. Every joint is cut for strength, not just appearance — because a drawer should still glide smoothly in ten years. Finishes are chosen for how they'll wear, not just how they'll look on day one.</p>
-          <ul>
-            <li>Hand-selected hardwoods, matched for grain</li>
-            <li>Traditional joinery built for decades of use</li>
-            <li>Durable, hand-rubbed finishes</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="cta-band reveal">
-        <div>
-          <h2>Have something specific in mind?</h2>
-          <p style="margin-top:0.6rem;">From a single built-in to a full kitchen, we'd love to hear what you're picturing and talk through what's possible in your space.</p>
-        </div>
-        <a class="btn btn-primary" href="#contact">Collaborate With Us</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= LEARN ================= -->
-  <section id="learn" class="page-section" style="background:var(--bg-alt);">
-    <div class="wrap">
-      <div class="page-kicker"><span class="label">Learn</span><span class="rule"></span><span class="num">Page 04</span></div>
-
-      <div class="hero-copy reveal">
-        <span class="eyebrow">Resources for Homeowners</span>
-        <h1 style="font-size:clamp(2.1rem,3.4vw + 1rem,3.2rem); margin-top:0.7rem;">Knowledge, before the sawdust flies.</h1>
-        <p class="lede" style="margin-top:1.1rem;">Good decisions start with good information. This is where we're putting together honest, practical guides — the kind of things we'd walk a friend through over coffee before they start a remodel or pick out cabinetry.</p>
-      </div>
-
-      <div class="learn-banner reveal">
-        <svg viewBox="0 0 48 48"><use href="#i-book"/></svg>
-        <div>
-          <strong style="font-family:var(--serif); font-size:1.05rem;">We're still building this page — fittingly.</strong>
-          <p style="margin-top:0.5rem; font-size:0.95rem;">Articles on wood species, remodel planning, permitting, and care guides are on their way. Check back soon, or reach out directly if you have a question we haven't answered yet.</p>
-        </div>
-      </div>
-
-      <div class="topics-grid reveal">
-        <div class="topic-card">
-          <span class="soon-tag">Coming Soon</span>
-          <h3>Understanding Cabinet Wood Species</h3>
-          <p>Why we reach for white oak over maple (and when we don't) — a plain-language guide to choosing wood that fits your kitchen and your budget.</p>
-        </div>
-        <div class="topic-card">
-          <span class="soon-tag">Coming Soon</span>
-          <h3>How to Prepare for a Major Addition</h3>
-          <p>What to sort out before the first shovel hits the ground — permits, timelines, and questions worth asking early.</p>
-        </div>
-        <div class="topic-card">
-          <span class="soon-tag">Coming Soon</span>
-          <h3>Designing Functional Built-Ins</h3>
-          <p>How to think about storage before you think about style, so the finished piece actually earns its space.</p>
-        </div>
-        <div class="topic-card">
-          <span class="soon-tag">Coming Soon</span>
-          <h3>A Homeowner's Guide to Permitting</h3>
-          <p>What permits are actually for, how long they take, and how to avoid the delays that catch people off guard.</p>
+          <strong style="font-family:var(--serif); font-size:1.05rem;">Featured Work Coming Soon</strong>
+          <p style="margin-top:0.5rem; font-size:0.95rem;">We are currently documenting our latest new builds, additions, and custom cabinetry projects across Northern Illinois. Check back soon to see our completed project gallery.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ================= CONTACT ================= -->
-  <section id="contact" class="page-section">
+  <section id="contact" class="page-section" style="background:var(--bg-alt);">
     <div class="wrap">
-      <div class="page-kicker"><span class="label">Contact</span><span class="rule"></span><span class="num">Page 05</span></div>
-
       <div class="contact-grid">
         <div class="contact-intro reveal">
-          <span class="eyebrow">Get in Touch</span>
-          <h1 style="font-size:clamp(2rem,3vw + 1rem,3rem); margin-top:0.7rem;">Let's talk about your project.</h1>
-          <p class="lede" style="margin-top:1.1rem;">No pressure, no scripted sales call — just a conversation about what you're picturing and whether we're a good fit to help build it. Tell us a bit about your project, and we'll get back to you personally.</p>
+          <span class="eyebrow">Get In Touch</span>
+          <h2 style="margin-top:0.6rem;">Start Your Build With Oak &amp; Fawn</h2>
+          <p class="lede" style="margin-top:1.1rem;">Planning a new home build, addition, or custom cabinetry project in Northern Illinois? Get in touch today.</p>
           <figure class="swatch-block">
             <svg class="swatch" viewBox="0 0 75 100" preserveAspectRatio="none" style="width:100%;height:100%;"><rect width="75" height="100" fill="url(#grain-sage)"/></svg>
             <figcaption>Hands over blueprints at the kitchen table.</figcaption>
@@ -599,10 +442,10 @@
 
         <div class="contact-direct reveal">
           <span class="eyebrow">Reach Us Directly</span>
-          <h2 style="margin-top:0.6rem;">We'd love to hear from you.</h2>
           <ul class="contact-list">
+            <li><a href="tel:+18479133699">(847) 913-3699</a></li>
             <li><a href="mailto:oak.fawn@gmail.com">oak.fawn@gmail.com</a></li>
-            <li><a href="tel:+18479133699">847-913-3699</a></li>
+            <li class="contact-region">Service Region: Northern Illinois</li>
           </ul>
           <p class="fineprint" style="margin-top:1.25rem;">We typically respond within 1–2 business days.</p>
         </div>
@@ -620,28 +463,28 @@
           <svg class="brand-mark" viewBox="0 0 48 48"><use href="#i-mark"/></svg>
           <span class="brand-name">Oak &amp; Fawn</span>
         </a>
-        <p>Building and carpentry, done with care.</p>
+        <p>General contracting, new construction, and custom carpentry across Northern Illinois.</p>
       </div>
       <div class="footer-col">
         <h4>Site</h4>
         <ul>
-          <li><a href="#homes">Oak &amp; Fawn Homes</a></li>
-          <li><a href="#carpentry">Oak &amp; Fawn Carpentry</a></li>
-          <li><a href="#learn">Learn</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how-we-work">How We Work</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
+          <li><a href="tel:+18479133699">(847) 913-3699</a></li>
           <li><a href="mailto:oak.fawn@gmail.com">oak.fawn@gmail.com</a></li>
-          <li><a href="tel:+18479133699">847-913-3699</a></li>
           <li>Serving Northern Illinois</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Oak &amp; Fawn Corporation.</span>
+      <span>© 2026 Oak &amp; Fawn.</span>
       <span>Privacy Policy</span>
     </div>
   </div>
@@ -661,7 +504,7 @@
     }
 
     var navLinks = document.querySelectorAll('[data-nav]');
-    var sections = ['home','homes','carpentry','learn','contact'].map(function(id){ return document.getElementById(id); });
+    var sections = ['about','services','how-we-work','contact'].map(function(id){ return document.getElementById(id); });
     if('IntersectionObserver' in window){
       var spy = new IntersectionObserver(function(entries){
         entries.forEach(function(e){
