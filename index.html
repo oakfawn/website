@@ -156,6 +156,31 @@
   }
   .notice-banner svg{ width:30px; height:30px; flex-shrink:0; color:var(--sage-deep); margin-top:0.2rem; }
 
+  /* ---------- Learn teaser ---------- */
+  .learn-teaser{
+    margin-top:clamp(3rem,5vw,4.5rem); border-radius:8px; padding:clamp(2rem,4vw,3rem);
+    background:var(--surface); border:1px solid var(--line); display:grid; gap:1.5rem; grid-template-columns:1fr;
+  }
+  @media (min-width:760px){ .learn-teaser{ grid-template-columns:auto 1fr auto; align-items:center; } }
+  .learn-teaser .icon-ring{ width:52px; height:52px; color:var(--sage-deep); }
+
+  /* ---------- Learn page ---------- */
+  .learn-banner{
+    margin-top:2.5rem; border:1px dashed var(--sage-deep); border-radius:6px;
+    padding:clamp(1.5rem,3vw,2.25rem); display:flex; gap:1.25rem; align-items:flex-start;
+    background:color-mix(in srgb, var(--sage) 10%, var(--surface));
+  }
+  .learn-banner svg{ width:30px; height:30px; flex-shrink:0; color:var(--sage-deep); margin-top:0.2rem; }
+  .topics-grid{ margin-top:2.5rem; display:grid; grid-template-columns:1fr; gap:1.25rem; }
+  @media (min-width:700px){ .topics-grid{ grid-template-columns:repeat(2,1fr); } }
+  .topic-card{ background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:1.5rem; position:relative; }
+  .soon-tag{
+    position:absolute; top:1.25rem; right:1.25rem; font-size:0.65rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:0.1em; color:var(--sage-deep); border:1px solid var(--sage-deep); border-radius:20px; padding:0.2rem 0.6rem;
+  }
+  .topic-card h3{ margin-right:5.5rem; font-size:1.08rem; }
+  .topic-card p{ margin-top:0.6rem; font-size:0.92rem; }
+
   /* ---------- Cards (service offerings) ---------- */
   .card-grid{ display:grid; grid-template-columns:1fr; gap:1.25rem; }
   @media (min-width:700px){ .card-grid{ grid-template-columns:1fr 1fr; } }
@@ -242,6 +267,7 @@
     <symbol id="i-build" viewBox="0 0 48 48"><path d="M10 32a14 14 0 0 1 28 0" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 32H42" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
 
     <symbol id="i-camera" viewBox="0 0 48 48"><rect x="6" y="14" width="36" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 14l3-5h10l3 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="24" cy="26" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-book" viewBox="0 0 48 48"><path d="M8 12c6-3 12-3 16 0v26c-4-3-10-3-16 0Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M40 12c-6-3-12-3-16 0v26c4-3 10-3 16 0Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
 
     <symbol id="i-leaf" viewBox="0 0 200 200"><path d="M100 10 C150 40 175 90 150 140 C130 175 90 190 60 175 C20 155 15 100 45 65 C65 40 85 20 100 10Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M100 15 C95 70 90 130 70 175" fill="none" stroke="currentColor" stroke-width="1.2"/></symbol>
 
@@ -273,6 +299,7 @@
         <a href="#about" data-nav="about">About</a>
         <a href="#services" data-nav="services">Services</a>
         <a href="#how-we-work" data-nav="how-we-work">How We Work</a>
+        <a href="#learn" data-nav="learn">Learn</a>
         <a href="#contact" data-nav="contact">Contact</a>
       </div>
       <a class="btn btn-primary nav-cta" href="#contact">Discuss Your Project</a>
@@ -312,6 +339,17 @@
         <span class="eyebrow">About Oak &amp; Fawn</span>
         <h2 style="margin-top:0.6rem;">Built on Precision &amp; Proven Project Management</h2>
         <p class="lede" style="margin-top:1rem;">At Oak &amp; Fawn, we combine the oversight of a full-service general contractor with the meticulous detail of a custom woodshop. Whether managing a ground-up new build, an extensive home addition, or crafting bespoke built-ins, we deliver clean execution, transparent management, and exceptional build quality across Northern Illinois.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="learn-teaser reveal">
+        <svg class="icon-ring" viewBox="0 0 48 48"><use href="#i-book"/></svg>
+        <div>
+          <h3>Thinking it through before you build</h3>
+          <p style="margin-top:0.4rem; font-size:0.95rem;">We believe the best clients are informed ones. Our Learn hub is where we're building out honest, practical guides on wood species, remodel timelines, permitting, and how to actually prepare for a project like this.</p>
+        </div>
+        <a class="btn btn-ghost" href="#learn">Visit the Learn Hub</a>
       </div>
     </div>
   </section>
@@ -413,6 +451,48 @@
     </div>
   </section>
 
+  <!-- ================= LEARN ================= -->
+  <section id="learn" class="page-section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Resources for Homeowners</span>
+        <h2>Knowledge, before the sawdust flies.</h2>
+        <p class="lede" style="margin-top:1rem;">Good decisions start with good information. This is where we're putting together honest, practical guides — the kind of things we'd walk a friend through over coffee before they start a remodel or pick out cabinetry.</p>
+      </div>
+
+      <div class="learn-banner reveal">
+        <svg viewBox="0 0 48 48"><use href="#i-book"/></svg>
+        <div>
+          <strong style="font-family:var(--serif); font-size:1.05rem;">We're still building this page — fittingly.</strong>
+          <p style="margin-top:0.5rem; font-size:0.95rem;">Articles on wood species, remodel planning, permitting, and care guides are on their way. Check back soon, or reach out directly if you have a question we haven't answered yet.</p>
+        </div>
+      </div>
+
+      <div class="topics-grid reveal">
+        <div class="topic-card">
+          <span class="soon-tag">Coming Soon</span>
+          <h3>Understanding Cabinet Wood Species</h3>
+          <p>Why we reach for white oak over maple (and when we don't) — a plain-language guide to choosing wood that fits your kitchen and your budget.</p>
+        </div>
+        <div class="topic-card">
+          <span class="soon-tag">Coming Soon</span>
+          <h3>How to Prepare for a Major Addition</h3>
+          <p>What to sort out before the first shovel hits the ground — permits, timelines, and questions worth asking early.</p>
+        </div>
+        <div class="topic-card">
+          <span class="soon-tag">Coming Soon</span>
+          <h3>Designing Functional Built-Ins</h3>
+          <p>How to think about storage before you think about style, so the finished piece actually earns its space.</p>
+        </div>
+        <div class="topic-card">
+          <span class="soon-tag">Coming Soon</span>
+          <h3>A Homeowner's Guide to Permitting</h3>
+          <p>What permits are actually for, how long they take, and how to avoid the delays that catch people off guard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= PORTFOLIO TEASER ================= -->
   <section id="portfolio" class="page-section" style="padding-block:clamp(2.5rem,4vw,3.5rem);">
     <div class="wrap">
@@ -436,7 +516,6 @@
           <p class="lede" style="margin-top:1.1rem;">Planning a new home build, addition, or custom cabinetry project in Northern Illinois? Get in touch today.</p>
           <figure class="swatch-block">
             <svg class="swatch" viewBox="0 0 75 100" preserveAspectRatio="none" style="width:100%;height:100%;"><rect width="75" height="100" fill="url(#grain-sage)"/></svg>
-            <figcaption>Hands over blueprints at the kitchen table.</figcaption>
           </figure>
         </div>
 
@@ -471,6 +550,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#how-we-work">How We Work</a></li>
+          <li><a href="#learn">Learn</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -485,7 +565,6 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Oak &amp; Fawn.</span>
-      <span>Privacy Policy</span>
     </div>
   </div>
 </footer>
@@ -504,7 +583,7 @@
     }
 
     var navLinks = document.querySelectorAll('[data-nav]');
-    var sections = ['about','services','how-we-work','contact'].map(function(id){ return document.getElementById(id); });
+    var sections = ['about','services','how-we-work','learn','contact'].map(function(id){ return document.getElementById(id); });
     if('IntersectionObserver' in window){
       var spy = new IntersectionObserver(function(entries){
         entries.forEach(function(e){
