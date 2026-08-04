@@ -12,10 +12,10 @@
     --sage-deep:#4C5940;
     --tan:#D9C9AC;
     --tan-deep:#C2AF8B;
-    --walnut:#6B4630;
-    --walnut-deep:#4A2F1F;
+    --walnut:#5C4632;
+    --walnut-deep:#3E2F21;
     --line:rgba(46,42,34,0.16);
-    --btn-bg:#6B4630;
+    --btn-bg:#5C4632;
     --btn-text:#FAF7F0;
     --shadow: 0 18px 40px -22px rgba(46,42,34,0.35);
     --serif: 'Iowan Old Style','Palatino Linotype','Book Antiqua', Palatino, Georgia, serif;
@@ -33,10 +33,10 @@
       --sage-deep:#748563;
       --tan:#4C4230;
       --tan-deep:#5E5238;
-      --walnut:#C08A5F;
-      --walnut-deep:#8C5C3B;
+      --walnut:#A38F72;
+      --walnut-deep:#6B5A44;
       --line:rgba(239,232,216,0.16);
-      --btn-bg:#C08A5F;
+      --btn-bg:#A38F72;
       --btn-text:#211B14;
       --shadow: 0 18px 44px -20px rgba(0,0,0,0.55);
       color-scheme: dark;
@@ -45,15 +45,15 @@
   :root[data-theme="dark"]{
     --bg:#1E1B15; --bg-alt:#262119; --surface:#2A2520; --ink:#EFE8D8; --ink-soft:#BDB39E;
     --sage:#9CAE8C; --sage-deep:#748563; --tan:#4C4230; --tan-deep:#5E5238;
-    --walnut:#C08A5F; --walnut-deep:#8C5C3B; --line:rgba(239,232,216,0.16);
-    --btn-bg:#C08A5F; --btn-text:#211B14; --shadow: 0 18px 44px -20px rgba(0,0,0,0.55);
+    --walnut:#A38F72; --walnut-deep:#6B5A44; --line:rgba(239,232,216,0.16);
+    --btn-bg:#A38F72; --btn-text:#211B14; --shadow: 0 18px 44px -20px rgba(0,0,0,0.55);
     color-scheme: dark;
   }
   :root[data-theme="light"]{
     --bg:#F1ECE1; --bg-alt:#E9E1CE; --surface:#FAF7F0; --ink:#2E2A22; --ink-soft:#5B5548;
     --sage:#6E7D61; --sage-deep:#4C5940; --tan:#D9C9AC; --tan-deep:#C2AF8B;
-    --walnut:#6B4630; --walnut-deep:#4A2F1F; --line:rgba(46,42,34,0.16);
-    --btn-bg:#6B4630; --btn-text:#FAF7F0; --shadow: 0 18px 40px -22px rgba(46,42,34,0.35);
+    --walnut:#5C4632; --walnut-deep:#3E2F21; --line:rgba(46,42,34,0.16);
+    --btn-bg:#5C4632; --btn-text:#FAF7F0; --shadow: 0 18px 40px -22px rgba(46,42,34,0.35);
     color-scheme: light;
   }
 
@@ -168,13 +168,6 @@
   }
   .swatch{ width:100%; height:100%; border-radius:6px; display:block; }
 
-  /* ---------- Showcase ---------- */
-  .showcase{ margin-top:clamp(4rem,7vw,6rem); }
-  .showcase-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:1.5rem; margin-bottom:2rem; flex-wrap:wrap; }
-  .showcase-grid{ display:grid; grid-template-columns:1fr; gap:1.75rem; }
-  @media (min-width:760px){ .showcase-grid{ grid-template-columns:repeat(3,1fr); } }
-  .showcase-item .swatch-block{ aspect-ratio:4/3; }
-
   /* ---------- Learn teaser ---------- */
   .learn-teaser{
     margin-top:clamp(4rem,7vw,6rem); border-radius:8px; padding:clamp(2rem,4vw,3rem);
@@ -254,22 +247,15 @@
 
   /* ---------- Contact ---------- */
   .contact-grid{ display:grid; grid-template-columns:1fr; gap:3rem; }
-  @media (min-width:860px){ .contact-grid{ grid-template-columns:0.85fr 1.15fr; } }
+  @media (min-width:860px){ .contact-grid{ grid-template-columns:1fr 1fr; } }
   .contact-intro .swatch-block{ aspect-ratio:3/4; margin-top:2rem; }
-  form.inquiry{ display:flex; flex-direction:column; gap:1.1rem; }
-  .field-row{ display:grid; grid-template-columns:1fr; gap:1.1rem; }
-  @media (min-width:520px){ .field-row.two{ grid-template-columns:1fr 1fr; } }
-  label{ font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft); display:block; margin-bottom:0.4rem; }
-  input, select, textarea{
-    width:100%; font-family:var(--sans); font-size:0.98rem; color:var(--ink); background:var(--surface);
-    border:1px solid var(--line); border-radius:4px; padding:0.75rem 0.9rem;
+  .contact-direct{ display:flex; flex-direction:column; justify-content:center; }
+  .contact-list{ list-style:none; margin:1.5rem 0 0; padding:0; display:flex; flex-direction:column; gap:1rem; }
+  .contact-list a{
+    font-family:var(--serif); font-size:1.4rem; color:var(--walnut); text-decoration:none;
+    border-bottom:1px solid transparent; transition:border-color 0.2s;
   }
-  input:focus, select:focus, textarea:focus{ outline:2px solid var(--sage-deep); outline-offset:1px; }
-  fieldset{ border:1px solid var(--line); border-radius:4px; padding:0.9rem 1rem; }
-  fieldset legend{ font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft); padding:0 0.4rem; }
-  .radio-row{ display:flex; flex-wrap:wrap; gap:1.25rem; margin-top:0.3rem; }
-  .radio-row label{ display:flex; align-items:center; gap:0.45rem; text-transform:none; font-weight:500; letter-spacing:0; font-size:0.95rem; color:var(--ink); margin:0; }
-  .radio-row input{ width:auto; }
+  .contact-list a:hover{ border-color:var(--walnut); }
   .fineprint{ font-size:0.85rem; color:var(--ink-soft); margin-top:0.5rem; }
 
   /* ---------- Footer ---------- */
@@ -400,34 +386,6 @@
           <span class="eyebrow">Our Philosophy</span>
           <h2 style="margin-top:0.6rem;">Two crafts. One standard.</h2>
           <p class="lede" style="margin-top:1rem;">Oak &amp; Fawn started from a simple frustration: it's hard to find people who build like they mean it. Contractors who show up when they say they will. Carpenters who care about a reveal line nobody else will notice. So we built a company around that kind of care — one side raising additions and remodeling homes, the other shaping wood into cabinetry and built-ins — both held to the same quiet standard: do it right, explain it clearly, and never rush the parts that matter.</p>
-        </div>
-      </div>
-
-      <!-- Showcase -->
-      <div class="showcase reveal">
-        <div class="showcase-head">
-          <h2>A few recent projects</h2>
-          <a class="btn btn-ghost" href="#contact">View the Full Portfolio</a>
-        </div>
-        <div class="showcase-grid">
-          <div class="showcase-item">
-            <figure class="swatch-block">
-              <svg class="swatch" viewBox="0 0 100 75" preserveAspectRatio="none" style="width:100%;height:100%;"><rect width="100" height="75" fill="url(#grain-sage)"/></svg>
-              <figcaption>A kitchen built around how this family actually cooks.</figcaption>
-            </figure>
-          </div>
-          <div class="showcase-item">
-            <figure class="swatch-block">
-              <svg class="swatch" viewBox="0 0 100 75" preserveAspectRatio="none" style="width:100%;height:100%;"><rect width="100" height="75" fill="url(#grain-tan)"/></svg>
-              <figcaption>A 400 sq. ft. addition that never looks added on.</figcaption>
-            </figure>
-          </div>
-          <div class="showcase-item">
-            <figure class="swatch-block">
-              <svg class="swatch" viewBox="0 0 100 75" preserveAspectRatio="none" style="width:100%;height:100%;"><rect width="100" height="75" fill="url(#grain-walnut)"/></svg>
-              <figcaption>Storage that disappears until you need it.</figcaption>
-            </figure>
-          </div>
         </div>
       </div>
 
@@ -639,41 +597,15 @@
           </figure>
         </div>
 
-        <form class="inquiry reveal" onsubmit="return false;">
-          <div class="field-row two">
-            <div><label for="name">Name</label><input id="name" type="text" placeholder="Jamie Rivera"></div>
-            <div><label for="email">Email</label><input id="email" type="email" placeholder="jamie@email.com"></div>
-          </div>
-          <div class="field-row two">
-            <div><label for="phone">Phone (optional)</label><input id="phone" type="tel" placeholder="(555) 010-0199"></div>
-            <div><label for="city">Project Location</label><input id="city" type="text" placeholder="City, State"></div>
-          </div>
-          <fieldset>
-            <legend>I'm interested in</legend>
-            <div class="radio-row">
-              <label><input type="radio" name="interest" checked> Oak &amp; Fawn Homes</label>
-              <label><input type="radio" name="interest"> Oak &amp; Fawn Carpentry</label>
-              <label><input type="radio" name="interest"> Not sure yet</label>
-            </div>
-          </fieldset>
-          <div>
-            <label for="details">Tell us about your project</label>
-            <textarea id="details" rows="4" placeholder="A bit about your space, your goals, and anything you're picturing."></textarea>
-          </div>
-          <div>
-            <label for="timeline">Rough Timeline</label>
-            <select id="timeline">
-              <option>Just exploring</option>
-              <option>Within 3 months</option>
-              <option>3–6 months</option>
-              <option>6+ months</option>
-            </select>
-          </div>
-          <div>
-            <button class="btn btn-primary" type="submit" style="width:100%; justify-content:center;">Tell Us About Your Project</button>
-            <p class="fineprint">We typically respond within 1–2 business days. For anything urgent, call us directly at (555) 010-0199.</p>
-          </div>
-        </form>
+        <div class="contact-direct reveal">
+          <span class="eyebrow">Reach Us Directly</span>
+          <h2 style="margin-top:0.6rem;">We'd love to hear from you.</h2>
+          <ul class="contact-list">
+            <li><a href="mailto:oak.fawn@gmail.com">oak.fawn@gmail.com</a></li>
+            <li><a href="tel:+18479133699">847-913-3699</a></li>
+          </ul>
+          <p class="fineprint" style="margin-top:1.25rem;">We typically respond within 1–2 business days.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -702,14 +634,14 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li>hello@oakandfawn.com</li>
-          <li>(555) 010-0199</li>
-          <li>Serving the greater valley region</li>
+          <li><a href="mailto:oak.fawn@gmail.com">oak.fawn@gmail.com</a></li>
+          <li><a href="tel:+18479133699">847-913-3699</a></li>
+          <li>Serving Northern Illinois</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Oak &amp; Fawn Corporation. Licensed &amp; insured.</span>
+      <span>© 2026 Oak &amp; Fawn Corporation.</span>
       <span>Privacy Policy</span>
     </div>
   </div>
