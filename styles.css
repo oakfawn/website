@@ -196,21 +196,13 @@ figure.swatch-block figcaption{
 .post-questions li strong{ color:var(--ink); font-weight:700; }
 
 /* ---------- Learn library page ---------- */
-.learn-banner{
-  margin-top:2.5rem; border:1px dashed var(--sage-deep); border-radius:6px;
-  padding:clamp(1.5rem,3vw,2.25rem); display:flex; gap:1.25rem; align-items:flex-start;
-  background:color-mix(in srgb, var(--sage) 10%, var(--surface));
-}
-.learn-banner svg{ width:30px; height:30px; flex-shrink:0; color:var(--sage-deep); margin-top:0.2rem; }
-.topics-grid{ margin-top:2.5rem; display:grid; grid-template-columns:1fr; gap:1.25rem; }
-@media (min-width:700px){ .topics-grid{ grid-template-columns:repeat(2,1fr); } }
-.topic-card{ background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:1.5rem; position:relative; }
+.tile-grid--library{ grid-template-columns:repeat(auto-fill, minmax(230px, 1fr)); }
+.tile-soon{ border-style:dashed; cursor:default; }
+.tile-soon:hover{ transform:none; box-shadow:none; }
 .soon-tag{
-  position:absolute; top:1.25rem; right:1.25rem; font-size:0.65rem; font-weight:700; text-transform:uppercase;
+  font-size:0.65rem; font-weight:700; text-transform:uppercase;
   letter-spacing:0.1em; color:var(--sage-deep); border:1px solid var(--sage-deep); border-radius:20px; padding:0.2rem 0.6rem;
 }
-.topic-card h3{ margin-right:5.5rem; font-size:1.08rem; }
-.topic-card p{ margin-top:0.6rem; font-size:0.92rem; }
 
 /* ---------- Cards (service offerings) ---------- */
 .card-grid{ display:grid; grid-template-columns:1fr; gap:1.25rem; }
