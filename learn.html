@@ -1,0 +1,211 @@
+<title>Learn | Oak & Fawn</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+
+<!-- sprite -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-mark" viewBox="0 0 48 48"><path d="M24 6 C16 14 10 20 10 28 a14 14 0 0 0 28 0 c0-8-6-14-14-22Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M24 22 V38" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+
+    <symbol id="i-addition" viewBox="0 0 48 48"><path d="M6 40V22L17 13l11 9v18Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M27 40V27l8-6 8 6v13Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-builtin" viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 19H40M8 29H40M24 8V40" stroke="currentColor" stroke-width="1.3"/></symbol>
+    <symbol id="i-trim" viewBox="0 0 48 48"><path d="M6 34C14 34 14 20 22 20C30 20 30 34 38 34" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 38H42" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+
+    <symbol id="i-structural" viewBox="0 0 48 48"><path d="M14 8H34M14 40H34M24 8V40" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18 8H30M18 40H30" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-utility" viewBox="0 0 48 48"><path d="M8 34H18V18H30V34H40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M24 15.5V18" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-house-diagram" viewBox="0 0 240 160">
+      <path d="M40 76 L120 20 L200 76" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+      <rect x="55" y="76" width="130" height="64" fill="none" stroke="currentColor" stroke-width="3"/>
+      <rect x="38" y="140" width="164" height="14" fill="none" stroke="currentColor" stroke-width="3"/>
+      <path d="M46 154V162M70 154V162M94 154V162M118 154V162M142 154V162M166 154V162M190 154V162" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+      <path d="M100 140V95H140V140" fill="none" stroke="currentColor" stroke-width="2.5" opacity="0.8"/>
+    </symbol>
+    <symbol id="i-book" viewBox="0 0 48 48"><path d="M8 12c6-3 12-3 16 0v26c-4-3-10-3-16 0Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M40 12c-6-3-12-3-16 0v26c4-3 10-3 16 0Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 48 48"><use href="#i-mark"/></svg>
+      <span class="brand-name">Oak &amp; Fawn</span>
+    </a>
+    <nav class="mainnav">
+      <div class="navlinks" style="display:flex; gap:inherit;">
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#how-we-work">How We Work</a>
+        <a href="learn.html" class="active">Learn</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <a class="btn btn-primary nav-cta" href="index.html#contact">Discuss Your Project</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= LEARN LIBRARY ================= -->
+  <section class="page-section" style="border-top:none;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Resources for Homeowners</span>
+        <h1 style="font-size:clamp(2.1rem,3.4vw + 1rem,3.2rem); margin-top:0.7rem;">Knowledge, before the sawdust flies.</h1>
+        <p class="lede" style="margin-top:1rem;">Good decisions start with good information. This is where we're putting together honest, practical guides — the kind of things we'd walk a friend through over coffee before they start a remodel or pick out cabinetry.</p>
+      </div>
+
+      <article class="post reveal" id="post-how-a-house-is-built">
+        <div class="post-head">
+          <svg class="post-icon" viewBox="0 0 240 160"><use href="#i-house-diagram"/></svg>
+          <div>
+            <span class="eyebrow">Homeowner Guide · Chicagoland</span>
+            <h3>How a House Is Actually Built: A Chicagoland Homeowner's Guide</h3>
+          </div>
+        </div>
+        <div class="post-body">
+          <p>If you've never built or majorly renovated a home before, the process can feel like a black box. One week there's a hole in the ground. A few months later there's a house. In between, it can seem like organized chaos.</p>
+          <p>Understanding that sequence is the single most useful thing a homeowner can know before starting a project, because it tells you exactly when to ask questions, when to make decisions, and when a five-minute conversation can save you thousands of dollars later.</p>
+
+          <div class="post-phase">
+            <svg class="phase-icon" viewBox="0 0 48 48"><use href="#i-structural"/></svg>
+            <div>
+              <h4>It starts below the ground, and it starts with inspections you'll never see</h4>
+              <p>Before a single wall goes up, a surveyor locates the house on the lot, an excavator digs for the foundation, and a concrete crew pours footings and foundation walls. This is also where Chicagoland's climate makes its first real demand on the budget: because our winters send frost deep into the ground, local building departments require footings to extend well below the frost line, commonly 42 inches below grade across Chicagoland municipalities, more than three times the national code minimum. Skip that depth, and frost heave can crack a foundation within a few winters.</p>
+              <p>Once the foundation is in, it gets waterproofed, drained, and backfilled, and if there's a basement, the slab gets poured. None of this is visible in the finished home, which is exactly why it matters so much that it's done right the first time.</p>
+            </div>
+          </div>
+
+          <div class="post-phase">
+            <svg class="phase-icon" viewBox="0 0 48 48"><use href="#i-addition"/></svg>
+            <div>
+              <h4>The frame: where the house starts to look like a house</h4>
+              <p>Framing is the phase everyone recognizes, floor systems, then walls, then roof structure, going up in that order because each one depends on the one before it being square, level, and plumb. A framing crew that's a quarter-inch off on the first floor deck isn't creating a quarter-inch problem. That error compounds through every trade that follows: the electrician routing wire, the tile setter trying to lay a level floor, the cabinet installer trying to get a face frame flush to a wall. This is where a carpentry-first background matters, the quality of the frame sets a ceiling on the quality of everything built on top of it.</p>
+              <p>Once the walls and roof are framed and sheathed, the crew wraps the exterior in a weather-resistive barrier, sets the windows and doors, and gets the roof on. At that point the house is "dried in" — protected from rain regardless of what the weather does next and the interior work can begin on its own schedule.</p>
+            </div>
+          </div>
+
+          <div class="post-phase">
+            <svg class="phase-icon" viewBox="0 0 48 48"><use href="#i-utility"/></svg>
+            <div>
+              <h4>Rough-in: the phase that decides how your house will actually perform</h4>
+              <p>With the frame open and exposed, three trades move through the house in a specific order: HVAC first (ductwork needs the most space and the least routing flexibility), plumbing second (drain lines have strict slope requirements that limit where they can go), and electrical last (wire is the most flexible of the three and can route around what the others have already committed to).</p>
+              <p>This is, quietly, the most consequential phase of the entire build. Once insulation and drywall go up, this work is invisible. If a duct run is poorly sealed, if insulation gets compressed around a pipe, if a wire is stapled through a joist it shouldn't be — none of that shows up at the final walkthrough. It shows up two winters later as a cold room, or five years later as a utility bill that doesn't match a comparable home down the street.</p>
+            </div>
+          </div>
+
+          <div class="post-phase">
+            <svg class="phase-icon" viewBox="0 0 48 48"><use href="#i-builtin"/></svg>
+            <div>
+              <h4>Insulation and drywall: covering it all up, for good</h4>
+              <p>Once every rough-in has passed inspection, insulation goes in — and here, installation quality matters as much as the material itself. Insulation that's compressed, gapped, or misaligned around wiring and plumbing won't perform to its rated value, even though it will look "installed." The same is true of air sealing: a wall can be fully insulated and still leak heat badly if the air barrier around it isn't continuous.</p>
+              <p>Drywall follows — hung, taped, and finished — and at that point, everything behind it is out of sight for the life of the house, barring a renovation.</p>
+            </div>
+          </div>
+
+          <div class="post-phase">
+            <svg class="phase-icon" viewBox="0 0 48 48"><use href="#i-trim"/></svg>
+            <div>
+              <h4>Finishes: where the house becomes yours</h4>
+              <p>From here, the trades that give a house its personality take over: trim carpentry, cabinetry, flooring, countertops, paint, and the finish (trim-out) work for plumbing, electrical, and HVAC — faucets, switch plates, registers, and equipment startup. Exterior work — siding, gutters, driveways, landscaping — often runs in parallel. Driveways and patios are frequently held until near the very end specifically to avoid damage from heavy delivery trucks, like the ones bringing in drywall earlier in the process.</p>
+              <p>The project closes with a final inspection, a certificate of occupancy, and a walkthrough where any remaining small items (the "punch list") get identified and corrected.</p>
+            </div>
+          </div>
+
+          <h4 style="font-size:1.15rem; margin-top:0.5rem;">Why understanding this sequence protects you and five questions worth asking your contractor</h4>
+          <p>The single most useful thing you can do as a homeowner is ask your contractor, at each of these phase transitions, to show you the work before it's covered — photos if you can't be on-site, a walkthrough if you can. It costs nothing, and it's the only point in the entire process where a mistake is still cheap to fix.</p>
+          <p>You don't need to become a builder to protect your investment — you just need to know when to ask a handful of specific questions:</p>
+          <ul class="post-questions">
+            <li><strong>At the foundation phase:</strong> "What's the footing depth here, and how does that compare to the code minimum?" In Chicagoland, the honest answer should reference frost depth, not just a generic number.</li>
+            <li><strong>Before framing starts:</strong> "How are you sequencing the floor, walls, and roof, and what tolerances are you holding?" A contractor who can answer this specifically — not just "we'll frame it up" — is thinking about the trades that come after framing, not just framing itself.</li>
+            <li><strong>Once the house is dried in:</strong> "Can I see photos of the housewrap and flashing before the windows went in?" This is the detail that decides whether your walls stay dry for the next fifty years.</li>
+            <li><strong>Before insulation and drywall go up:</strong> "Can you walk me through the rough-in, or send me photos, before it's covered?" This is the single highest-value question in the entire process, because it's the last moment anyone can verify this work without opening a finished wall.</li>
+            <li><strong>At the final walkthrough:</strong> "What's on the punch list, and what's the timeline to close it out?" A clear, written punch list with a completion date is a sign of a contractor who treats the end of the project with the same discipline as the beginning.</li>
+          </ul>
+          <p>If you're planning a custom build, addition, or major remodel in the Chicagoland area and want a contractor who treats every one of these phases with the same care as the finish work you'll actually see, <a href="index.html#contact">reach out to Oak &amp; Fawn</a> — we'd be glad to walk you through what your specific project's sequence and timeline will look like.</p>
+        </div>
+      </article>
+
+      <div class="learn-banner reveal">
+        <svg viewBox="0 0 48 48"><use href="#i-book"/></svg>
+        <div>
+          <strong style="font-family:var(--serif); font-size:1.05rem;">More guides on the way.</strong>
+          <p style="margin-top:0.5rem; font-size:0.95rem;">Articles on wood species, remodel planning, permitting, and care guides are still in the works. Check back soon, or reach out directly if you have a question we haven't answered yet.</p>
+        </div>
+      </div>
+
+      <div class="topics-grid reveal">
+        <div class="topic-card">
+          <span class="soon-tag">Coming Soon</span>
+          <h3>Understanding Cabinet Wood Species</h3>
+          <p>Why we reach for white oak over maple (and when we don't) — a plain-language guide to choosing wood that fits your kitchen and your budget.</p>
+        </div>
+        <div class="topic-card">
+          <span class="soon-tag">Coming Soon</span>
+          <h3>How to Prepare for a Major Addition</h3>
+          <p>What to sort out before the first shovel hits the ground — permits, timelines, and questions worth asking early.</p>
+        </div>
+        <div class="topic-card">
+          <span class="soon-tag">Coming Soon</span>
+          <h3>Designing Functional Built-Ins</h3>
+          <p>How to think about storage before you think about style, so the finished piece actually earns its space.</p>
+        </div>
+        <div class="topic-card">
+          <span class="soon-tag">Coming Soon</span>
+          <h3>A Homeowner's Guide to Permitting</h3>
+          <p>What permits are actually for, how long they take, and how to avoid the delays that catch people off guard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <svg class="brand-mark" viewBox="0 0 48 48"><use href="#i-mark"/></svg>
+          <span class="brand-name">Oak &amp; Fawn</span>
+        </a>
+        <p>General contracting, new construction, and custom carpentry across Northern Illinois.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#how-we-work">How We Work</a></li>
+          <li><a href="learn.html">Learn</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+18479133699">(847) 913-3699</a></li>
+          <li><a href="mailto:oak.fawn@gmail.com">oak.fawn@gmail.com</a></li>
+          <li>Serving Northern Illinois</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Oak &amp; Fawn.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.reveal');
+    if(!reduced && 'IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in-view'); });
+    }
+  })();
+</script>
